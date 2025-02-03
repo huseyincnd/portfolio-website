@@ -1,7 +1,26 @@
 import { MetadataRoute } from 'next'
+import { blogPosts } from "@/data/blog-posts"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Blog post'larını getiren fonksiyon
+async function getBlogPosts() {
+  // Bu kısmı blog post'larınızın nasıl saklandığına göre güncellemeniz gerekebilir
+  // Örnek olarak bir dizi dönüyoruz
+  return [
+    { slug: 'ilk-blog-yazisi', lastModified: new Date() },
+    { slug: 'ikinci-blog-yazisi', lastModified: new Date() }
+  ]
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://cuneydiogluhuseyin.online'
+  
+  // Blog post'ları için sitemap girişleri
+  const blogPostEntries = blogPosts.map(post => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(), // Eğer post'larda lastModified veya date bilgisi varsa onu kullanabilirsiniz
+    changeFrequency: 'never' as const,
+    priority: 0.7
+  }))
   
   return [
     {
@@ -28,6 +47,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    // Blog sayfaları için dinamik sitemap eklenebilir
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    // Blog post'larını ekle
+    ...blogPostEntries
   ]
 } 
