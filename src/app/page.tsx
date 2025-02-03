@@ -1,5 +1,28 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Hüseyin Cüneydioğlu | Full Stack Web Developer",
+  description: "Web geliştirme ve UI/UX tasarımı konusunda uzmanlaşmış bir yazılım mühendisi. Modern teknolojiler kullanarak kullanıcı dostu web uygulamaları geliştiriyorum.",
+  keywords: ["Full Stack Developer", "Web Geliştirici", "Frontend Developer", "React Uzmanı", "Next.js Developer", "UI/UX Tasarımcı", "İstanbul"],
+  alternates: {
+    canonical: "https://cuneydiogluhuseyin.online",
+  },
+  openGraph: {
+    title: "Hüseyin Cüneydioğlu | Full Stack Web Developer",
+    description: "Web geliştirme ve UI/UX tasarımı konusunda uzmanlaşmış bir yazılım mühendisi.",
+    url: "https://cuneydiogluhuseyin.online",
+    siteName: "Hüseyin Cüneydioğlu",
+    locale: "tr_TR",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hüseyin Cüneydioğlu | Full Stack Web Developer",
+    description: "Web geliştirme ve UI/UX tasarımı konusunda uzmanlaşmış bir yazılım mühendisi."
+  },
+};
 
 export default function Home() {
   const techStack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "UI/UX Design"];

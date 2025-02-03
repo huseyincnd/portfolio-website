@@ -1,10 +1,26 @@
 import { CodeBracketIcon, AcademicCapIcon, RocketLaunchIcon, BeakerIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
+import type { Metadata } from "next";
 
 const skills = {
   languages: ["JavaScript", "TypeScript", "HTML", "CSS"],
   frameworks: ["React", "Next.js", "Tailwind CSS"],
   tools: ["Git", "VS Code", "Figma"],
   learning: ["Node.js", "Express.js", "MongoDB"]
+};
+
+export const metadata: Metadata = {
+  title: "Hakkımda | Hüseyin Cüneydioğlu",
+  description: "10+ yıllık yazılım geliştirme deneyimim, teknik yeteneklerim ve profesyonel geçmişim hakkında detaylı bilgi. Full stack web geliştirme, UI/UX tasarımı ve modern web teknolojileri konularındaki uzmanlığım.",
+  keywords: ["Hüseyin Cüneydioğlu Kimdir", "Web Geliştirici Özgeçmiş", "Yazılım Mühendisi Deneyim", "Full Stack Developer CV", "React Geliştirici"],
+  alternates: {
+    canonical: "https://cuneydiogluhuseyin.online/about",
+  },
+  openGraph: {
+    title: "Hakkımda | Hüseyin Cüneydioğlu",
+    description: "10+ yıllık yazılım geliştirme deneyimim ve profesyonel geçmişim hakkında detaylı bilgi.",
+    url: "https://cuneydiogluhuseyin.online/about",
+    type: "profile"
+  }
 };
 
 export default function AboutPage() {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, Github, Calendar, ArrowRight, Globe, Smartphone, Zap, Search } from "lucide-react";
+import type { Metadata } from "next";
 
 type TechStack = "Next.js" | "React" | "TypeScript" | "Tailwind CSS" | "Responsive Design" | "SEO" | "Animation";
 
@@ -148,6 +149,21 @@ const projects: Project[] = [
     date: "2024",
   }
 ];
+
+export const metadata: Metadata = {
+  title: "Projeler | Hüseyin Cüneydioğlu",
+  description: "Web geliştirme, UI/UX tasarımı ve full stack projelerimden oluşan portföyüm. React, Next.js, TypeScript ve modern web teknolojileri ile geliştirdiğim projeler ve başarı hikayeleri.",
+  keywords: ["Web Projeleri", "React Projeleri", "Full Stack Projeler", "UI/UX Tasarım Portföyü", "Next.js Örnekleri", "Web Geliştirici Portföyü"],
+  alternates: {
+    canonical: "https://cuneydiogluhuseyin.online/projects",
+  },
+  openGraph: {
+    title: "Projeler | Hüseyin Cüneydioğlu",
+    description: "Web geliştirme ve UI/UX tasarım projelerimden oluşan portföyüm.",
+    url: "https://cuneydiogluhuseyin.online/projects",
+    type: "website"
+  }
+};
 
 export default function ProjectsPage() {
   return (
