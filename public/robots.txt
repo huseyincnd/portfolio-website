@@ -1,0 +1,33 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cuneydiogluhuseyin.online
+
+# Sitemaps
+Sitemap: https://cuneydiogluhuseyin.online/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 10
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 10 

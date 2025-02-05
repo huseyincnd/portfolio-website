@@ -14,46 +14,68 @@ async function getBlogPosts() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://cuneydiogluhuseyin.online'
   
-  // Blog post'ları için sitemap girişleri
-  const blogPostEntries = blogPosts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(), // Eğer post'larda lastModified veya date bilgisi varsa onu kullanabilirsiniz
-    changeFrequency: 'never' as const,
-    priority: 0.7
-  }))
-  
-  return [
+  // Ana sayfalar için sitemap girişleri
+  const staticPages = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily' as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/packages`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'daily' as const,
       priority: 0.9,
     },
-    // Blog post'larını ekle
-    ...blogPostEntries
   ]
+
+  // Blog post'ları için sitemap girişleri
+  const blogPostEntries = blogPosts.map(post => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8
+  }))
+
+  // Hizmet sayfaları için sitemap girişleri
+  const servicePages = [
+    'web-tasarim',
+    'e-ticaret',
+    'kurumsal-web-sitesi',
+    'seo-hizmetleri',
+    'web-yazilim',
+    'mobil-uyumlu-tasarim'
+  ].map(service => ({
+    url: `${baseUrl}/services/${service}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85
+  }))
+
+  return [...staticPages, ...blogPostEntries, ...servicePages]
 } 
