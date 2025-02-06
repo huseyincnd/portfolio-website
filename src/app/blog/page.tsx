@@ -5,31 +5,32 @@ import { Calendar, Clock, Search, Tag, Sparkles, ArrowRight, BookOpen } from "lu
 import { blogPosts } from "@/data/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Web Tasarım ve Yazılım Blog | Güncel Teknoloji Makaleleri",
-  description: "Web tasarım, yazılım geliştirme, UI/UX tasarımı ve modern teknolojiler hakkında uzman makaleler. SEO, performans optimizasyonu ve kullanıcı deneyimi konularında profesyonel içerikler.",
+  title: "Web Tasarım Blog | Güncel Web Teknolojileri ve SEO Makaleleri 2025",
+  description: "Web tasarım, SEO, dijital pazarlama ve e-ticaret hakkında güncel makaleler. Next.js, React ve modern web teknolojileri üzerine uzman içerikler. Web sitenizi geliştirmek için profesyonel ipuçları.",
   keywords: [
     "web tasarım blog",
-    "yazılım geliştirme blog",
-    "UI/UX tasarım makaleleri",
-    "Next.js rehberleri",
-    "React örnekleri",
-    "web geliştirme ipuçları",
-    "SEO optimizasyonu",
-    "e-ticaret çözümleri",
-    "modern web teknolojileri",
-    "frontend geliştirme",
-    "backend teknolojileri",
-    "web performans optimizasyonu",
-    "responsive tasarım",
-    "mobil uyumlu web tasarım",
-    "TypeScript örnekleri"
+    "web teknolojileri",
+    "SEO makaleleri",
+    "dijital pazarlama",
+    "e-ticaret rehberi",
+    "Next.js eğitim",
+    "React öğreticiler",
+    "web site optimizasyonu",
+    "modern web geliştirme",
+    "web tasarım trendleri 2024",
+    "mobil tasarım ipuçları",
+    "web güvenliği",
+    "performans optimizasyonu",
+    "kullanıcı deneyimi",
+    "web site bakımı",
+    "hatay web tasarım blog"
   ],
   alternates: {
     canonical: "https://cuneydiogluhuseyin.online/blog"
   },
   openGraph: {
-    title: "Web Tasarım ve Yazılım Blog | Güncel Teknoloji Makaleleri",
-    description: "Web tasarım, yazılım geliştirme ve modern teknolojiler hakkında profesyonel makaleler. Uzman önerileri ve pratik çözümler.",
+    title: "Web Tasarım Blog | Güncel Teknoloji Makaleleri",
+    description: "Web tasarım, SEO ve dijital pazarlama hakkında uzman makaleler. Modern web teknolojileri ve profesyonel ipuçları.",
     url: "https://cuneydiogluhuseyin.online/blog",
     type: "website",
     images: [
@@ -37,14 +38,14 @@ export const metadata: Metadata = {
         url: "https://cuneydiogluhuseyin.online/blog-og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Web Tasarım ve Yazılım Blog"
+        alt: "Web Tasarım ve SEO Blog"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Tasarım ve Yazılım Blog | Güncel Teknoloji Makaleleri",
-    description: "Web tasarım, yazılım geliştirme ve modern teknolojiler hakkında profesyonel makaleler.",
+    title: "Web Tasarım Blog | Teknoloji ve SEO Makaleleri",
+    description: "Web tasarım ve dijital pazarlama hakkında güncel içerikler. Profesyonel ipuçları ve uzman tavsiyeleri.",
     images: ["https://cuneydiogluhuseyin.online/blog-og-image.jpg"]
   }
 };

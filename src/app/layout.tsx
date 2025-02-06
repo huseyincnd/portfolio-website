@@ -10,30 +10,32 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://cuneydiogluhuseyin.online'),
   title: {
     template: '%s | Profesyonel Web Tasarım ve Yazılım Hizmetleri',
-    default: 'Web Tasarım ve Yazılım Hizmetleri | Hüseyin Cüneydioğlu',
+    default: 'Web Tasarım ve Yazılım Hizmetleri 2025 | Hüseyin Cüneydioğlu',
   },
-  description: 'Modern web tasarım, kurumsal website yapımı ve e-ticaret çözümleri. Uygun fiyatlı, profesyonel ve SEO uyumlu web sitesi yapımı. Anahtar teslim web tasarım hizmetleri.',
+  description: 'Modern web tasarım ve yazılım hizmetleri. 5+ yıl tecrübe ve 50+ başarılı proje. Next.js, React ve modern teknolojilerle kurumsal web sitesi, e-ticaret ve özel yazılım çözümleri. SEO uyumlu ve mobil öncelikli tasarım.',
   keywords: [
-    'web tasarım',
-    'website yapımı',
-    'web sitesi fiyatları',
+    // Ana Hizmetler
+    'web tasarım 2024',
+    'web sitesi yapımı',
+    'e-ticaret sitesi kurulumu',
     'kurumsal web tasarım',
-    'e-ticaret sitesi',
-    'anahtar teslim web sitesi',
-    'profesyonel web tasarım',
-    'uygun fiyatlı web sitesi',
-    'seo uyumlu web tasarım',
-    'mobil uyumlu web sitesi',
-    'wordpress web tasarım',
-    'özel web yazılım',
-    'web tasarım fiyatları',
-    'web sitesi yaptırmak',
-    'web tasarım şirketi',
-    'web tasarım ajansı',
-    'freelance web tasarım',
-    'web sitesi tasarımı',
-    'responsive web tasarım',
-    'modern web tasarım',
+    'özel yazılım geliştirme',
+    
+    // Teknoloji Stack
+    'Next.js web tasarım',
+    'React web geliştirme',
+    'modern web teknolojileri',
+    'mobil uyumlu tasarım',
+    'SEO optimizasyonu',
+    
+    // Sektörel
+    'kurumsal firma web sitesi',
+    'e-ticaret çözümleri',
+    'kişisel web sitesi',
+    'blog sitesi tasarımı',
+    'landing page tasarımı',
+    
+    // Lokasyon
     'hatay web tasarım',
     'antakya web tasarım',
     'iskenderun web tasarım',
@@ -94,7 +96,13 @@ export const metadata: Metadata = {
     'web tasarım örnekleri',
     'web tasarım portföy',
     'web tasarım referanslar',
-    'başarılı web siteleri'
+    'başarılı web siteleri',
+    // Özellikler
+    'hızlı web sitesi',
+    'güvenli e-ticaret',
+    '7/24 teknik destek',
+    'ücretsiz SSL sertifikası',
+    'ücretsiz domain hosting'
   ],
   authors: [{ 
     name: 'Hüseyin Cüneydioğlu',
@@ -117,22 +125,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'tr_TR',
     url: 'https://cuneydiogluhuseyin.online',
-    title: 'Web Tasarım ve Yazılım Hizmetleri | Hüseyin Cüneydioğlu',
-    description: 'Modern web tasarım, kurumsal website yapımı ve e-ticaret çözümleri. Uygun fiyatlı, profesyonel ve SEO uyumlu web sitesi yapımı.',
+    title: 'Modern Web Tasarım ve Yazılım Hizmetleri 2024 | Hüseyin Cüneydioğlu',
+    description: '5+ yıl tecrübe ve 50+ başarılı proje. Next.js ve React ile modern web çözümleri. E-ticaret, kurumsal web sitesi ve özel yazılım projeleri.',
     siteName: 'Hüseyin Cüneydioğlu - Web Tasarım',
     images: [
       {
         url: 'https://cuneydiogluhuseyin.online/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Web Tasarım ve Yazılım Hizmetleri',
+        alt: 'Modern Web Tasarım ve Yazılım Hizmetleri',
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Tasarım ve Yazılım Hizmetleri | Hüseyin Cüneydioğlu',
-    description: 'Modern web tasarım, kurumsal website yapımı ve e-ticaret çözümleri. Uygun fiyatlı, profesyonel ve SEO uyumlu web sitesi yapımı.',
+    title: 'Web Tasarım ve Yazılım Hizmetleri 2024 | Hüseyin Cüneydioğlu',
+    description: '5+ yıl tecrübe ve 50+ başarılı proje. Modern web teknolojileri ile profesyonel çözümler.',
     images: ['https://cuneydiogluhuseyin.online/og-image.jpg'],
     creator: '@huseyincnd',
   },
@@ -156,16 +164,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96' },
+      { url: '/web-app-manifest-192x192.png', sizes: '192x192' },
+      { url: '/web-app-manifest-512x512.png', sizes: '512x512' }
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180' }
     ],
     other: [
       {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-        color: '#00aaff'
+        rel: 'manifest',
+        url: '/site.webmanifest'
       }
     ]
   },
@@ -206,7 +216,7 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               "name": "Hüseyin Cüneydioğlu - Web Tasarım",
               "image": "https://cuneydiogluhuseyin.online/logo.png",
-              "description": "Modern web tasarım, kurumsal website yapımı ve e-ticaret çözümleri. Uygun fiyatlı, profesyonel ve SEO uyumlu web sitesi yapımı.",
+              "description": "Modern web tasarım, kurumsal website yapımı ve e-ticaret çözümleri. Uygun fiyatlı, profesyonel ve SEO uyumlu web sitesi yapımı. 5 yıllık tecrübe ve 50+ başarılı proje ile hizmetinizdeyiz.",
               "@id": "https://cuneydiogluhuseyin.online",
               "url": "https://cuneydiogluhuseyin.online",
               "telephone": "+905306720570",
@@ -222,90 +232,10 @@ export default function RootLayout({
                 "latitude": 36.2023,
                 "longitude": 36.1613
               },
-              "priceRange": "₺₺",
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
-                ],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              "sameAs": [
-                "https://github.com/huseyincnd",
-                "https://linkedin.com/in/huseyincnd"
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5",
-                "ratingCount": "50",
-                "bestRating": "5",
-                "worstRating": "1"
-              },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Web Tasarım Hizmetleri",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Kurumsal Web Sitesi",
-                      "description": "Profesyonel ve modern kurumsal web sitesi tasarımı",
-                      "price": "4500",
-                      "priceCurrency": "TRY"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "E-Ticaret Sitesi",
-                      "description": "Özel e-ticaret web sitesi tasarımı ve geliştirme",
-                      "price": "7500",
-                      "priceCurrency": "TRY"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Kurumsal Paket",
-                      "description": "Tam kapsamlı kurumsal web çözümleri",
-                      "price": "12500",
-                      "priceCurrency": "TRY"
-                    }
-                  }
-                ]
-              },
               "areaServed": [
                 {
                   "@type": "City",
                   "name": "Hatay"
-                },
-                {
-                  "@type": "City",
-                  "name": "Almanya"
-                },
-                {
-                  "@type": "City",
-                  "name": "Bursa"
-                },
-                {
-                  "@type": "City",
-                  "name": "Adana"
-                },
-                {
-                  "@type": "City",
-                  "name": "Mersin"
-                },
-                {
-                  "@type": "City",
-                  "name": "Gaziantep"
                 },
                 {
                   "@type": "City",
@@ -321,28 +251,34 @@ export default function RootLayout({
                 },
                 {
                   "@type": "City",
-                  "name": "Antalya"
+                  "name": "Adana"
                 },
                 {
                   "@type": "City",
-                  "name": "Kahramanmaraş"
+                  "name": "Mersin"
                 },
                 {
                   "@type": "City",
-                  "name": "Osmaniye"
-                },
-                {
-                  "@type": "City",
-                  "name": "Şanlıurfa"
-                },
-                {
-                  "@type": "City",
-                  "name": "Diyarbakır"
-                },
-                {
-                  "@type": "City",
-                  "name": "Malatya"
+                  "name": "Gaziantep"
                 }
+              ],
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "priceRange": "₺₺",
+              "sameAs": [
+                "https://github.com/huseyincnd",
+                "https://linkedin.com/in/huseyincnd"
               ],
               "knowsAbout": [
                 "Web Tasarım",
@@ -350,8 +286,73 @@ export default function RootLayout({
                 "E-ticaret Sistemleri",
                 "SEO Optimizasyonu",
                 "Responsive Tasarım",
-                "UI/UX Tasarım"
-              ]
+                "UI/UX Tasarım",
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Tailwind CSS"
+              ],
+              "keywords": "web tasarım, web sitesi yapımı, kurumsal web tasarım, e-ticaret sitesi, SEO uyumlu web tasarım, mobil uyumlu web sitesi, profesyonel web tasarım, uygun fiyatlı web sitesi",
+              "slogan": "Modern ve Profesyonel Web Çözümleri",
+              "foundingDate": "2019",
+              "award": "50+ Başarılı Proje",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Web Tasarım Hizmetleri",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Başlangıç Paketi",
+                      "description": "Kişisel ve küçük işletmeler için web sitesi",
+                      "price": "4500",
+                      "priceCurrency": "TRY",
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.8",
+                        "ratingCount": "15",
+                        "bestRating": "5",
+                        "worstRating": "1"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Profesyonel Paket",
+                      "description": "Orta ölçekli işletmeler için web çözümleri",
+                      "price": "7500",
+                      "priceCurrency": "TRY",
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.9",
+                        "ratingCount": "22",
+                        "bestRating": "5",
+                        "worstRating": "1"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Kurumsal Paket",
+                      "description": "Büyük işletmeler için kapsamlı web çözümleri",
+                      "price": "12500",
+                      "priceCurrency": "TRY",
+                      "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "5.0",
+                        "ratingCount": "13",
+                        "bestRating": "5",
+                        "worstRating": "1"
+                      }
+                    }
+                  }
+                ]
+              }
             })
           }}
         />

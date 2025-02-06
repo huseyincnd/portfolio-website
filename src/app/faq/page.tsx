@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, MessageCircle, Search } from "lucide-react";
 
 // FAQ kategorileri ve soruları
@@ -171,6 +171,28 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [openQuestions, setOpenQuestions] = useState<string[]>([]);
 
+  // FAQ Schema'sı için tüm soruları düzleştir
+  const allQuestions = faqCategories.flatMap(category => 
+    category.questions.map(q => ({
+      questionName: q.q,
+      acceptedAnswerText: q.a
+    }))
+  );
+
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allQuestions.map(q => ({
+      "@type": "Question",
+      "name": q.questionName,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.acceptedAnswerText
+      }
+    }))
+  };
+
   const toggleQuestion = (question: string) => {
     setOpenQuestions(prev =>
       prev.includes(question)
@@ -178,6 +200,18 @@ export default function FAQPage() {
         : [...prev, question]
     );
   };
+
+  // Head bölümü için script elementi
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const filteredCategories = faqCategories.map(category => ({
     ...category,

@@ -151,8 +151,8 @@ const projects: Project[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Portföy | Modern Web Tasarım ve Yazılım Projeleri",
-  description: "50+ başarılı web projesi ve referanslar. E-ticaret, kurumsal web sitesi, özel yazılım projeleri ve daha fazlası. Next.js, React ve modern teknolojilerle geliştirilen profesyonel çözümler.",
+  title: "Web Tasarım Portföy | Başarılı Web Projeleri ve Referanslar 2024",
+  description: "50+ başarılı web projesi ve referanslar. E-ticaret, kurumsal web sitesi, özel yazılım projeleri. Next.js, React ve modern teknolojilerle geliştirilen profesyonel çözümler. Sektöre özel web tasarım örnekleri.",
   keywords: [
     "web tasarım portföy",
     "başarılı web projeleri",
@@ -168,14 +168,17 @@ export const metadata: Metadata = {
     "mobil uyumlu web sitesi",
     "profesyonel web çözümleri",
     "web tasarım örnekleri",
-    "başarı hikayeleri"
+    "başarı hikayeleri",
+    "sektörel web tasarım",
+    "hatay web tasarım örnekleri",
+    "2024 web projeleri"
   ],
   alternates: {
     canonical: "https://cuneydiogluhuseyin.online/projects"
   },
   openGraph: {
-    title: "Modern Web Tasarım ve Yazılım Projeleri | Başarılı Referanslar",
-    description: "50+ başarılı web projesi ve referanslar. Modern teknolojilerle geliştirilen profesyonel web çözümleri.",
+    title: "Modern Web Tasarım Portföy | 50+ Başarılı Proje",
+    description: "E-ticaret, kurumsal web sitesi ve özel yazılım projeleri. Modern teknolojilerle geliştirilen profesyonel web çözümleri ve başarı hikayeleri.",
     url: "https://cuneydiogluhuseyin.online/projects",
     type: "website",
     images: [
@@ -183,14 +186,14 @@ export const metadata: Metadata = {
         url: "https://cuneydiogluhuseyin.online/projects-og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Web Tasarım Portföy"
+        alt: "Web Tasarım Portföy ve Referanslar"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Modern Web Tasarım ve Yazılım Projeleri",
-    description: "50+ başarılı web projesi ve profesyonel referanslar.",
+    title: "Modern Web Tasarım Portföy | Başarılı Projeler",
+    description: "50+ başarılı web projesi ve profesyonel referanslar. Sektöre özel web tasarım çözümleri.",
     images: ["https://cuneydiogluhuseyin.online/projects-og-image.jpg"]
   }
 };

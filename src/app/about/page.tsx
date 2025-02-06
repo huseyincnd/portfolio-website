@@ -66,31 +66,43 @@ const projects = [
 ];
 
 export const metadata: Metadata = {
-  title: "Hakkımda | Full Stack Web Geliştirici Hüseyin Cüneydioğlu",
-  description: "5+ yıllık web geliştirme deneyimi, 50+ başarılı proje ve modern teknoloji stack'i. Next.js, React, TypeScript ve UI/UX tasarımı konularında uzman Full Stack Developer.",
+  title: "Full Stack Web Geliştirici | Hüseyin Cüneydioğlu - 5+ Yıl Tecrübe",
+  description: "Next.js, React ve modern web teknolojileri uzmanı. 50+ başarılı proje ve müşteri memnuniyeti. E-ticaret, kurumsal web sitesi ve özel yazılım projeleri. UI/UX tasarım ve SEO optimizasyonu konularında uzman Full Stack Developer.",
   keywords: [
+    // Uzmanlık Alanları
     "Full Stack Developer",
-    "web geliştirici",
-    "freelance yazılımcı",
+    "web geliştirici 2025",
     "Next.js uzmanı",
     "React geliştirici",
     "TypeScript uzmanı",
     "UI/UX tasarımcı",
-    "web tasarım portfolyo",
+    
+    // Hizmetler
+    "freelance yazılımcı",
+    "web tasarım danışmanı",
+    "SEO danışmanlığı",
+    "e-ticaret uzmanı",
     "yazılım danışmanı",
-    "teknoloji stack",
+    
+    // Teknolojiler
     "modern web teknolojileri",
-    "yazılım projeleri",
-    "başarılı web projeleri",
-    "web geliştirme deneyimi",
-    "profesyonel web geliştirici"
+    "Tailwind CSS",
+    "Node.js",
+    "MongoDB",
+    "API geliştirme",
+    
+    // Lokasyon ve Özellikler
+    "mersin web geliştirici",
+    "remote çalışma",
+    "5+ yıl deneyim",
+    "50+ başarılı proje"
   ],
   alternates: {
     canonical: "https://cuneydiogluhuseyin.online/about"
   },
   openGraph: {
-    title: "Full Stack Web Geliştirici Hüseyin Cüneydioğlu",
-    description: "5+ yıllık web geliştirme deneyimi ve modern teknoloji stack'i ile profesyonel web çözümleri.",
+    title: "Full Stack Web Geliştirici | Hüseyin Cüneydioğlu",
+    description: "5+ yıl tecrübe ve 50+ başarılı proje. Modern web teknolojileri uzmanı, UI/UX tasarımcı ve SEO danışmanı.",
     url: "https://cuneydiogluhuseyin.online/about",
     type: "profile",
     images: [
@@ -104,8 +116,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Full Stack Web Geliştirici Hüseyin Cüneydioğlu",
-    description: "5+ yıllık web geliştirme deneyimi ve modern teknoloji stack'i.",
+    title: "Full Stack Web Geliştirici | Hüseyin Cüneydioğlu",
+    description: "5+ yıl web geliştirme deneyimi ve modern teknoloji stack'i. Next.js, React ve UI/UX tasarım uzmanı.",
     images: ["https://cuneydiogluhuseyin.online/about-og-image.jpg"]
   }
 };

@@ -1,48 +1,51 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sık Sorulan Sorular | Web Sitesi Yaptırırken Bilmeniz Gerekenler",
-  description: "Web sitesi yaptırmak isteyenlerin en çok merak ettiği sorular ve detaylı cevapları. Maliyetler, süreç, güvenlik, destek ve daha fazlası hakkında bilgi edinin. 5 yıllık tecrübe ve 50+ başarılı proje.",
+  title: "Web Tasarım SSS | Web Sitesi Maliyeti ve Süreç Hakkında Detaylı Bilgi",
+  description: "Web sitesi yaptırmak isteyenlerin tüm sorularına kapsamlı cevaplar. Maliyetler, süreç, teknik detaylar, güvenlik, SEO ve bakım hizmetleri hakkında profesyonel bilgilendirme. 5 yıllık tecrübe ve 50+ başarılı proje.",
   keywords: [
-    "web sitesi fiyatları",
-    "web sitesi maliyeti",
-    "web sitesi yaptırmak",
-    "web sitesi nasıl yapılır",
+    "web sitesi fiyatları 2024",
+    "web tasarım maliyeti",
+    "e-ticaret sitesi fiyatları",
+    "kurumsal web sitesi maliyeti",
+    "web sitesi bakım ücreti",
+    "web tasarım süreçleri",
     "web sitesi güvenliği",
-    "e-ticaret sitesi kurmak",
-    "web sitesi bakımı",
-    "web tasarım şirketi",
-    "güvenilir web tasarım",
-    "profesyonel web sitesi",
-    "web sitesi destek",
-    "7/24 teknik destek",
-    "ücretsiz web sitesi danışmanlık",
-    "web sitesi taksit",
-    "uygun fiyatlı web sitesi",
-    "kurumsal web sitesi",
-    "mobil uyumlu web sitesi",
-    "seo uyumlu web sitesi",
-    "kolay yönetilen web sitesi",
-    "web sitesi eğitimi",
-    "web sitesi yedekleme",
     "ssl sertifikası",
-    "domain hosting",
-    "web sitesi bakım paketi"
-  ].join(", "),
+    "domain hosting fiyatları",
+    "seo optimizasyonu",
+    "mobil uyumlu tasarım",
+    "web sitesi yönetim paneli",
+    "web tasarım destek hizmeti",
+    "ücretsiz web danışmanlık",
+    "profesyonel web çözümleri",
+    "hatay web tasarım",
+    "web sitesi taksit seçenekleri",
+    "e-ticaret site kurulumu",
+    "web sitesi yenileme",
+    "web sitesi güncelleştirme"
+  ],
+  alternates: {
+    canonical: "https://cuneydiogluhuseyin.online/faq"
+  },
   openGraph: {
-    title: "Web Sitesi Yaptırmak İsteyenlerin Sık Sorduğu Sorular",
-    description: "Web sitesi yaptırmak isteyenlerin tüm sorularına açık ve net cevaplar. 5 yıllık tecrübe ve 50+ başarılı proje ile yanınızdayız. Ücretsiz danışmanlık için hemen iletişime geçin.",
+    title: "Web Tasarım SSS | Profesyonel Web Sitesi Hizmetleri",
+    description: "Web sitesi yaptırmadan önce bilmeniz gereken her şey. Maliyetler, süreçler ve teknik detaylar hakkında kapsamlı bilgi.",
+    url: "https://cuneydiogluhuseyin.online/faq",
     type: "website",
     images: [
       {
-        url: "/og-image-faq.jpg",
+        url: "https://cuneydiogluhuseyin.online/faq-og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Web Sitesi SSS"
+        alt: "Web Tasarım Sık Sorulan Sorular"
       }
     ]
   },
-  alternates: {
-    canonical: "https://cuneydiogluhuseyin.online/faq"
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Tasarım SSS | Web Sitesi Maliyeti ve Süreçler",
+    description: "Web sitesi yaptırmadan önce bilmeniz gereken tüm detaylar. Profesyonel web tasarım hizmetleri hakkında kapsamlı bilgi.",
+    images: ["https://cuneydiogluhuseyin.online/faq-og-image.jpg"]
   }
 }; 

@@ -1,67 +1,23 @@
+"use client";
+
+import { useEffect } from "react";
 import { Check, Star, ArrowRight, Shield, Clock, Zap, Sparkles, Users, Award } from "lucide-react";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Web Tasarım Paketleri ve Fiyatları | Uygun Fiyatlı Web Sitesi",
-  description: "Ekonomik web tasarım paketleri ve uygun fiyatlı web sitesi çözümleri. E-ticaret, kurumsal web sitesi ve özel tasarım paketleri. Taksit imkanı ve ücretsiz domain-hosting.",
-  keywords: [
-    "web tasarım fiyatları",
-    "web sitesi paketleri",
-    "uygun fiyatlı web sitesi",
-    "ekonomik web tasarım",
-    "e-ticaret paketi",
-    "kurumsal web paketi",
-    "web sitesi maliyeti",
-    "web tasarım teklifi",
-    "profesyonel web paketi",
-    "web sitesi yaptırma fiyatları",
-    "taksitli web tasarım",
-    "ücretsiz domain hosting",
-    "web tasarım kampanya",
-    "hesaplı web sitesi",
-    "web site fiyat listesi"
-  ],
-  alternates: {
-    canonical: "https://cuneydiogluhuseyin.online/packages"
-  },
-  openGraph: {
-    title: "Web Tasarım Paketleri ve Fiyatları | Uygun Fiyatlı Çözümler",
-    description: "Ekonomik web tasarım paketleri ve uygun fiyatlı web sitesi çözümleri. Taksit imkanı ve ücretsiz domain-hosting.",
-    url: "https://cuneydiogluhuseyin.online/packages",
-    type: "website",
-    images: [
-      {
-        url: "https://cuneydiogluhuseyin.online/packages-og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Web Tasarım Paketleri"
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Web Tasarım Paketleri ve Fiyatları",
-    description: "Ekonomik web tasarım paketleri ve uygun fiyatlı çözümler.",
-    images: ["https://cuneydiogluhuseyin.online/packages-og-image.jpg"]
-  }
-};
 
 const packages = [
   {
     name: "Başlangıç Paketi",
-    price: "4.500 ₺",
-    description: "Küçük işletmeler ve kişisel web siteleri için ideal çözüm",
+    price: "4.500₺",
+    description: "Kişisel ve küçük işletmeler için ideal başlangıç paketi",
     features: [
-      "Modern ve Profesyonel Tasarım",
-      "Mobil Uyumlu Yapı",
       "5 Sayfa İçerik",
-      "İletişim Formu",
-      "SSL Sertifikası",
-      "6 Ay Ücretsiz Hosting",
-      "Temel SEO Optimizasyonu",
-      "Sosyal Medya Bağlantıları",
-      "Google Analytics Entegrasyonu",
+      "Mobil Uyumlu Tasarım",
+      "SEO Optimizasyonu",
+      "Ücretsiz SSL",
+      "Domain ve Hosting (6 Ay)",
+      "7/24 Destek",
+      "WhatsApp Entegrasyonu",
+      "Google Analytics"
     ],
     benefits: [
       {
@@ -84,21 +40,19 @@ const packages = [
   },
   {
     name: "Profesyonel Paket",
-    price: "7.500 ₺",
-    description: "Büyüyen işletmeler için kapsamlı çözüm",
+    price: "7.500₺",
+    description: "Orta ölçekli işletmeler ve e-ticaret siteleri için profesyonel çözüm",
     features: [
-      "Modern ve Profesyonel Tasarım",
-      "Mobil Uyumlu Yapı",
       "10 Sayfa İçerik",
-      "Gelişmiş İletişim Formu",
-      "Blog Sistemi",
-      "SSL Sertifikası",
-      "12 Ay Ücretsiz Hosting",
-      "Detaylı SEO Optimizasyonu",
+      "E-ticaret Altyapısı",
+      "Ödeme Sistemi",
+      "Stok Yönetimi",
+      "SEO Optimizasyonu",
+      "Ücretsiz SSL",
+      "Domain ve Hosting (1 Yıl)",
+      "7/24 VIP Destek",
       "Sosyal Medya Entegrasyonu",
-      "Google Analytics & Search Console",
-      "Yönetim Paneli",
-      "WhatsApp İletişim Butonu",
+      "Google Ads Desteği"
     ],
     benefits: [
       {
@@ -121,24 +75,19 @@ const packages = [
   },
   {
     name: "Kurumsal Paket",
-    price: "12.500 ₺",
-    description: "Kurumsal firmalar için özel çözüm",
+    price: "12.500₺",
+    description: "Büyük işletmeler ve kurumsal firmalar için özel çözüm",
     features: [
-      "Premium Tasarım",
-      "Mobil Uyumlu Yapı",
       "Sınırsız Sayfa",
-      "Gelişmiş İletişim Sistemi",
-      "Blog ve Haber Sistemi",
-      "SSL Sertifikası",
-      "24 Ay Ücretsiz Hosting",
-      "Kapsamlı SEO Optimizasyonu",
-      "Sosyal Medya Entegrasyonu",
-      "Google Analytics & Search Console",
-      "Gelişmiş Yönetim Paneli",
-      "WhatsApp İletişim Butonu",
+      "Özel Tasarım",
+      "İleri SEO Paketi",
       "Çoklu Dil Desteği",
-      "Online Ödeme Altyapısı",
-      "E-posta Hosting",
+      "İleri Analitik",
+      "Ücretsiz SSL",
+      "Domain ve Hosting (1 Yıl)",
+      "7/24 Öncelikli Destek",
+      "Pazarlama Danışmanlığı",
+      "Özel Entegrasyonlar"
     ],
     benefits: [
       {
@@ -162,6 +111,47 @@ const packages = [
 ];
 
 export default function PackagesPage() {
+  // Product Schema'sı
+  const productsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": packages.map((pkg, index) => ({
+      "@type": "Product",
+      "position": index + 1,
+      "name": pkg.name,
+      "description": pkg.description,
+      "offers": {
+        "@type": "Offer",
+        "price": pkg.price.replace(/[^0-9]/g, ''),
+        "priceCurrency": "TRY",
+        "availability": "https://schema.org/InStock",
+        "url": `https://cuneydiogluhuseyin.online/packages#${pkg.name.toLowerCase().replace(/\s+/g, '-')}`,
+        "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "Hüseyin Cüneydioğlu Web Tasarım"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "50"
+      }
+    }))
+  };
+
+  // Schema'yı head'e ekle
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(productsSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen pt-5 pb-16 bg-[#030014] overflow-hidden">
       {/* Hero Section with Enhanced Background */}

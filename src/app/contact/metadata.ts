@@ -1,31 +1,43 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "İletişim | Web Tasarım ve Yazılım Hizmetleri İçin Bize Ulaşın",
-  description: "Web projeleriniz için profesyonel destek alın. 7/24 teknik destek, ücretsiz danışmanlık ve uygun fiyatlı web tasarım hizmetleri için hemen iletişime geçin. WhatsApp ile anında yanıt.",
+  title: "İletişime Geç | Web Tasarım ve Yazılım Hizmetleri İçin Bize Ulaşın",
+  description: "7/24 teknik destek ve ücretsiz danışmanlık. Web tasarım, e-ticaret ve özel yazılım projeleri için hemen iletişime geçin. WhatsApp ile anında yanıt. 5+ yıl tecrübe ve 50+ başarılı proje ile hizmetinizdeyiz.",
   keywords: [
+    // İletişim Bilgileri
     "web tasarım iletişim",
-    "yazılım danışmanlığı",
-    "web tasarım fiyat teklifi",
-    "ücretsiz web danışmanlık",
-    "web tasarım destek",
-    "web sitesi yaptırmak",
-    "e-ticaret sitesi kurulum",
-    "web tasarım şirketi iletişim",
-    "profesyonel web tasarım",
-    "web geliştirici iletişim",
+    "web tasarım telefon",
+    "web tasarımcı iletişim",
+    "web tasarım whatsapp",
     "7/24 teknik destek",
-    "WhatsApp destek hattı",
-    "web tasarım hizmetleri",
+    
+    // Hizmetler
+    "web tasarım danışmanlık",
+    "ücretsiz web danışmanlık",
+    "web tasarım teklif",
+    "web tasarım fiyat",
+    "e-ticaret danışmanlık",
+    
+    // Lokasyon
+    "hatay web tasarım",
+    "mersin web tasarım",
+    "adana web tasarım",
+    "web tasarım ofisi",
+    "web tasarım firması",
+    
+    // Özellikler
+    "hızlı iletişim",
     "online destek",
-    "hızlı iletişim"
+    "whatsapp destek",
+    "ücretsiz keşif",
+    "web tasarım randevu"
   ],
   alternates: {
     canonical: "https://cuneydiogluhuseyin.online/contact"
   },
   openGraph: {
-    title: "Web Tasarım ve Yazılım Hizmetleri İçin Bize Ulaşın",
-    description: "Profesyonel web çözümleri için 7/24 destek. Ücretsiz danışmanlık ve fiyat teklifi için hemen iletişime geçin.",
+    title: "İletişime Geç | Web Tasarım ve Yazılım Hizmetleri",
+    description: "7/24 teknik destek ve ücretsiz danışmanlık. Web projeniz için hemen iletişime geçin.",
     url: "https://cuneydiogluhuseyin.online/contact",
     type: "website",
     images: [
@@ -39,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Tasarım ve Yazılım Hizmetleri İçin Bize Ulaşın",
-    description: "Profesyonel web çözümleri için 7/24 destek ve ücretsiz danışmanlık.",
+    title: "İletişime Geç | Web Tasarım ve Yazılım Hizmetleri",
+    description: "7/24 teknik destek ve ücretsiz danışmanlık. Web projeniz için hemen iletişime geçin.",
     images: ["https://cuneydiogluhuseyin.online/contact-og-image.jpg"]
   }
 }; 
