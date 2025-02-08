@@ -28,42 +28,52 @@ export const businessSchema = {
 		"@type": "Country",
 		"name": "Turkey"
 	},
+	"sameAs": [
+		"https://www.instagram.com/cuneydiogluhuseyin/",
+		"https://www.linkedin.com/in/cuneydiogluhuseyin/",
+		"https://github.com/cuneydiogluhuseyin"
+	]
+};
+
+// Ayrı bir Organization schema'sı oluşturalım
+export const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "Hüseyin Cüneydioğlu Web Tasarım",
+	"url": "https://cuneydiogluhuseyin.online",
+	"logo": "/logo.png",
 	"aggregateRating": {
 		"@type": "AggregateRating",
 		"ratingValue": "5",
 		"ratingCount": "50",
 		"bestRating": "5",
 		"worstRating": "1"
+	}
+};
+
+// Service schema'sı oluşturalım
+export const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Web Design",
+	"provider": {
+		"@type": "Organization",
+		"name": "Hüseyin Cüneydioğlu Web Tasarım"
 	},
-	"review": [
-		{
-			"@type": "Review",
-			"reviewRating": {
-				"@type": "Rating",
-				"ratingValue": "5",
-				"bestRating": "5",
-				"worstRating": "1"
-			},
-			"author": {
-				"@type": "Person",
-				"name": "Ahmet Yılmaz"
-			},
-			"reviewBody": "Hüseyin Bey ile çalışmak çok keyifliydi. Kliniğimiz için hazırladığı web sitesi beklentilerimizin üzerinde oldu.",
-			"itemReviewed": {
-				"@type": "Service",
-				"name": "Web Tasarım Hizmetleri",
-				"provider": {
-					"@type": "WebDesignCompany",
-					"name": "Hüseyin Cüneydioğlu - Web Tasarım"
-				}
-			}
-		}
-	],
-	"sameAs": [
-		"https://www.instagram.com/cuneydiogluhuseyin/",
-		"https://www.linkedin.com/in/cuneydiogluhuseyin/",
-		"https://github.com/cuneydiogluhuseyin"
-	],
+	"review": {
+		"@type": "Review",
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5",
+			"worstRating": "1"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Ahmet Yılmaz"
+		},
+		"reviewBody": "Hüseyin Bey ile çalışmak çok keyifliydi. Kliniğimiz için hazırladığı web sitesi beklentilerimizin üzerinde oldu."
+	},
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
 		"name": "Web Tasarım Hizmetleri",
@@ -125,4 +135,4 @@ export const faqSchema = {
 	]
 };
 
-export const schemas = [businessSchema, faqSchema];
+export const schemas = [businessSchema, organizationSchema, serviceSchema, faqSchema];
