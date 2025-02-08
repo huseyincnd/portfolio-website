@@ -10,6 +10,7 @@ const contactSchema = z.object({
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
   subject: z.string().min(5, "Konu en az 5 karakter olmalıdır"),
   message: z.string().min(10, "Mesaj en az 10 karakter olmalıdır"),
+  _honeypot: z.string().length(0).optional(),
 });
 
 export default function ContactPage() {
@@ -18,6 +19,7 @@ export default function ContactPage() {
     email: "",
     subject: "",
     message: "",
+    _honeypot: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +44,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "", _honeypot: "" });
       } else {
         setSubmitStatus("error");
       }
@@ -96,7 +98,7 @@ export default function ContactPage() {
         }}
       />
       
-      <div className="min-h-screen pt-24 pb-16 bg-[#030014] overflow-hidden">
+        <div className="min-h-screen bg-[#030014] overflow-hidden">
         {/* Background Effects */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,#000066,transparent)]" />
@@ -107,9 +109,9 @@ export default function ContactPage() {
           <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="w-full">
           {/* Hero Section */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto px-4 pt-20 pb-16 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <MessageSquare className="w-4 h-4 text-blue-400" />
               <span className="text-sm font-medium text-blue-400">İletişim</span>
@@ -122,7 +124,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-8">
               {/* Contact Cards */}
@@ -285,6 +287,17 @@ export default function ContactPage() {
                     <p className="mt-1 text-sm text-red-500">{errors.message}</p>
                   )}
                 </div>
+
+                {/* Honeypot field */}
+                <input
+                  type="text"
+                  name="_honeypot"
+                  style={{ display: 'none' }}
+                  value={formData._honeypot}
+                  onChange={(e) => setFormData({ ...formData, _honeypot: e.target.value })}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
                 <button
                   type="submit"

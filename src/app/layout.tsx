@@ -3,19 +3,34 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { Footer } from "@/components/layout/footer";
+import { schemas } from './schemas';
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cuneydiogluhuseyin.online'),
   title: {
-    template: '%s | Profesyonel Web Tasarım ve Yazılım Hizmetleri',
-    default: 'Web Tasarım ve Yazılım Hizmetleri 2025 | Hüseyin Cüneydioğlu',
+    template: '%s | En İyi Web Tasarım ve Yazılım Hizmetleri',
+    default: '2025 Web Tasarım ve Yazılım Hizmetleri | #1 Web Tasarım Şirketi',
   },
-  description: 'Modern web tasarım ve yazılım hizmetleri. 5+ yıl tecrübe ve 50+ başarılı proje. Next.js, React ve modern teknolojilerle kurumsal web sitesi, e-ticaret ve özel yazılım çözümleri. SEO uyumlu ve mobil öncelikli tasarım.',
+  description: 'Modern web tasarım ve yazılım hizmetleri. 5+ yıl tecrübe, 50+ başarılı proje ve %100 müşteri memnuniyeti. Next.js, React ve modern teknolojilerle kurumsal web sitesi, e-ticaret ve özel yazılım çözümleri. SEO uyumlu, mobil öncelikli ve yüksek performanslı web siteleri.',
   keywords: [
     // Ana Hizmetler
-    'web tasarım 2024',
+    'en iyi web tasarım şirketi',
+    'profesyonel web tasarım ajansı',
+    'web tasarım fiyatları 2025',
+    'kurumsal web sitesi yapan firmalar',
+    'e-ticaret sitesi kurulum fiyatları',
+    'web tasarım danışmanlığı',
+    'seo danışmanlık hizmetleri',
+    'web site bakım hizmetleri',
+    'web tasarım hatay',
+    'hatay web tasarım şirketleri',
+    'web tasarım 2025',
     'web sitesi yapımı',
     'e-ticaret sitesi kurulumu',
     'kurumsal web tasarım',
@@ -125,7 +140,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'tr_TR',
     url: 'https://cuneydiogluhuseyin.online',
-    title: 'Modern Web Tasarım ve Yazılım Hizmetleri 2024 | Hüseyin Cüneydioğlu',
+    title: 'Modern Web Tasarım ve Yazılım Hizmetleri 2025 | Hüseyin Cüneydioğlu',
     description: '5+ yıl tecrübe ve 50+ başarılı proje. Next.js ve React ile modern web çözümleri. E-ticaret, kurumsal web sitesi ve özel yazılım projeleri.',
     siteName: 'Hüseyin Cüneydioğlu - Web Tasarım',
     images: [
@@ -139,7 +154,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Tasarım ve Yazılım Hizmetleri 2024 | Hüseyin Cüneydioğlu',
+    title: 'Web Tasarım ve Yazılım Hizmetleri 2025 | Hüseyin Cüneydioğlu',
     description: '5+ yıl tecrübe ve 50+ başarılı proje. Modern web teknolojileri ile profesyonel çözümler.',
     images: ['https://cuneydiogluhuseyin.online/og-image.jpg'],
     creator: '@huseyincnd',
@@ -189,7 +204,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className="scroll-smooth dark">
-      <head>
+        <head>
         {/* Google Analytics 4 */}
         <script
           async
@@ -197,171 +212,33 @@ export default function RootLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-43H2T33JTB', {
-                page_path: window.location.pathname,
-              });
-            `,
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-43H2T33JTB', {
+            page_path: window.location.pathname,
+            });
+          `,
           }}
         />
         {/* Local Business Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "name": "Hüseyin Cüneydioğlu - Web Tasarım",
-              "image": "https://cuneydiogluhuseyin.online/logo.png",
-              "description": "Modern web tasarım, kurumsal website yapımı ve e-ticaret çözümleri. Uygun fiyatlı, profesyonel ve SEO uyumlu web sitesi yapımı. 5 yıllık tecrübe ve 50+ başarılı proje ile hizmetinizdeyiz.",
-              "@id": "https://cuneydiogluhuseyin.online",
-              "url": "https://cuneydiogluhuseyin.online",
-              "telephone": "+905306720570",
-              "email": "cuneydiogluhuseyin1@gmail.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Hatay",
-                "addressRegion": "Hatay",
-                "addressCountry": "TR"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 36.2023,
-                "longitude": 36.1613
-              },
-              "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "Hatay"
-                },
-                {
-                  "@type": "City",
-                  "name": "İstanbul"
-                },
-                {
-                  "@type": "City",
-                  "name": "Ankara"
-                },
-                {
-                  "@type": "City",
-                  "name": "İzmir"
-                },
-                {
-                  "@type": "City",
-                  "name": "Adana"
-                },
-                {
-                  "@type": "City",
-                  "name": "Mersin"
-                },
-                {
-                  "@type": "City",
-                  "name": "Gaziantep"
-                }
-              ],
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday"
-                ],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              "priceRange": "₺₺",
-              "sameAs": [
-                "https://github.com/huseyincnd",
-                "https://linkedin.com/in/huseyincnd"
-              ],
-              "knowsAbout": [
-                "Web Tasarım",
-                "Web Geliştirme",
-                "E-ticaret Sistemleri",
-                "SEO Optimizasyonu",
-                "Responsive Tasarım",
-                "UI/UX Tasarım",
-                "Next.js",
-                "React",
-                "TypeScript",
-                "Tailwind CSS"
-              ],
-              "keywords": "web tasarım, web sitesi yapımı, kurumsal web tasarım, e-ticaret sitesi, SEO uyumlu web tasarım, mobil uyumlu web sitesi, profesyonel web tasarım, uygun fiyatlı web sitesi",
-              "slogan": "Modern ve Profesyonel Web Çözümleri",
-              "foundingDate": "2019",
-              "award": "50+ Başarılı Proje",
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Web Tasarım Hizmetleri",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Başlangıç Paketi",
-                      "description": "Kişisel ve küçük işletmeler için web sitesi",
-                      "price": "4500",
-                      "priceCurrency": "TRY",
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "4.8",
-                        "ratingCount": "15",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      }
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Profesyonel Paket",
-                      "description": "Orta ölçekli işletmeler için web çözümleri",
-                      "price": "7500",
-                      "priceCurrency": "TRY",
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "4.9",
-                        "ratingCount": "22",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      }
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Kurumsal Paket",
-                      "description": "Büyük işletmeler için kapsamlı web çözümleri",
-                      "price": "12500",
-                      "priceCurrency": "TRY",
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "5.0",
-                        "ratingCount": "13",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      }
-                    }
-                  }
-                ]
-              }
-            })
+          __html: JSON.stringify(schemas)
           }}
         />
-      </head>
-      <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 min-h-screen`}>
-        <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
-        <WhatsAppButton />
-      </body>
+        </head>
+        <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 min-h-screen flex flex-col`}>
+          <Navbar />
+          <div className="flex-grow w-full">
+          <main className="w-full mt-16">{children}</main>
+          </div>
+          <Footer />
+          <WhatsAppButton />
+        </body>
     </html>
   );
 }
+

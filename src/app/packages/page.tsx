@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { packagesSchema } from './metadata';
 import { Check, Star, ArrowRight, Shield, Clock, Zap, Sparkles, Users, Award } from "lucide-react";
 import Link from "next/link";
 
@@ -111,44 +112,44 @@ const packages = [
 ];
 
 export default function PackagesPage() {
-  // Product Schema'sı
-  const productsSchema = {
+  // FAQ Schema
+  const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": packages.map((pkg, index) => ({
-      "@type": "Product",
-      "position": index + 1,
-      "name": pkg.name,
-      "description": pkg.description,
-      "offers": {
-        "@type": "Offer",
-        "price": pkg.price.replace(/[^0-9]/g, ''),
-        "priceCurrency": "TRY",
-        "availability": "https://schema.org/InStock",
-        "url": `https://cuneydiogluhuseyin.online/packages#${pkg.name.toLowerCase().replace(/\s+/g, '-')}`,
-        "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Teslim süresi ne kadar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seçtiğiniz pakete ve projenin kapsamına göre 5-10 iş günü içerisinde siteniz tamamlanmaktadır. Acil projeler için öncelikli geliştirme seçeneği mevcuttur."
+        }
       },
-      "brand": {
-        "@type": "Brand",
-        "name": "Hüseyin Cüneydioğlu Web Tasarım"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "50"
+      {
+        "@type": "Question",
+        "name": "Paketlere hosting dahil mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet, tüm paketlere belirtilen süre boyunca ücretsiz hosting hizmeti dahildir. Süre sonunda uygun fiyatlarla hosting hizmetinizi uzatabilirsiniz."
+        }
       }
-    }))
+    ]
   };
 
-  // Schema'yı head'e ekle
+  // Add schemas to head
+
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(productsSchema);
-    document.head.appendChild(script);
+    const schemas = [packagesSchema, faqSchema];
+    schemas.forEach(schema => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    });
 
     return () => {
-      document.head.removeChild(script);
+      const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+      scripts.forEach(script => script.remove());
     };
   }, []);
 
@@ -167,7 +168,7 @@ export default function PackagesPage() {
           <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
         </div>
 
-        <div className="relative container mx-auto px-4 pt-8 pb-32">
+        <div className="relative container mx-auto px-4 pt-2 pb-32">
           <div className="max-w-5xl mx-auto">
             <div className="text-center space-y-8">
               {/* Badge */}

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: "Web tasarım, SEO, dijital pazarlama ve e-ticaret hakkında güncel makaleler. Next.js, React ve modern web teknolojileri üzerine uzman içerikler. Web sitenizi geliştirmek için profesyonel ipuçları.",
   keywords: [
     "web tasarım blog",
+    "web tasarım",
     "web teknolojileri",
     "SEO makaleleri",
     "dijital pazarlama",
@@ -17,13 +18,14 @@ export const metadata: Metadata = {
     "React öğreticiler",
     "web site optimizasyonu",
     "modern web geliştirme",
-    "web tasarım trendleri 2024",
+    "web tasarım trendleri 2025",
     "mobil tasarım ipuçları",
     "web güvenliği",
     "performans optimizasyonu",
     "kullanıcı deneyimi",
     "web site bakımı",
-    "hatay web tasarım blog"
+    "mersin web tasarım blog",
+    "mersin web tasarım",
   ],
   alternates: {
     canonical: "https://cuneydiogluhuseyin.online/blog"

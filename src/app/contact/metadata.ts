@@ -22,9 +22,13 @@ export const metadata: Metadata = {
     "hatay web tasarım",
     "mersin web tasarım",
     "adana web tasarım",
+    "iskenderun web tasarım",
+    "malatya web tasarım",
+    "gaziantep web tasarım",
     "web tasarım ofisi",
     "web tasarım firması",
     
+
     // Özellikler
     "hızlı iletişim",
     "online destek",

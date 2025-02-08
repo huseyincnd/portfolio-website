@@ -2,27 +2,56 @@ import { NextResponse } from "next/server";
 import { Resend } from 'resend';
 import { z } from "zod";
 
-// Form şeması
+// Rate limiting map
+const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
+const RATE_LIMIT_DURATION = 3600000; // 1 hour in milliseconds
+const MAX_REQUESTS = 5; // Maximum requests per hour
+
+// Form schema with honeypot
 const contactSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   subject: z.string().min(5),
   message: z.string().min(10),
+  _honeypot: z.string().length(0).optional(), // Honeypot field
 });
 
-// Resend client
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    console.log('Form data received:', body);
+    // Get IP address for rate limiting
+    const ip = req.headers.get('x-forwarded-for') || 'unknown';
     
-    // Form doğrulama
-    const validatedData = contactSchema.parse(body);
-    console.log('Validation passed:', validatedData);
+    // Check rate limit
+    const now = Date.now();
+    const userLimit = rateLimitMap.get(ip);
+    
+    if (userLimit) {
+      if (now - userLimit.timestamp < RATE_LIMIT_DURATION) {
+        if (userLimit.count >= MAX_REQUESTS) {
+          return NextResponse.json(
+            { error: "Çok fazla istek gönderdiniz. Lütfen daha sonra tekrar deneyin." },
+            { status: 429 }
+          );
+        }
+        userLimit.count++;
+      } else {
+        rateLimitMap.set(ip, { count: 1, timestamp: now });
+      }
+    } else {
+      rateLimitMap.set(ip, { count: 1, timestamp: now });
+    }
 
-    // E-posta gönderimi
+    const body = await req.json();
+    
+    // Check honeypot
+    if (body._honeypot) {
+      return NextResponse.json({ message: "Form başarıyla gönderildi" }, { status: 200 });
+    }
+
+    const validatedData = contactSchema.parse(body);
+
     const result = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'lafonten1999@gmail.com',
@@ -36,8 +65,6 @@ export async function POST(req: Request) {
         <p>${validatedData.message.replace(/\n/g, "<br>")}</p>
       `
     });
-    
-    console.log('Resend response:', result);
 
     return NextResponse.json(
       { message: "Mesajınız başarıyla gönderildi" },
@@ -53,10 +80,9 @@ export async function POST(req: Request) {
       );
     }
 
-    const errorMessage = error instanceof Error ? error.message : "Bilinmeyen bir hata oluştu";
     return NextResponse.json(
-      { error: "Bir hata oluştu: " + errorMessage },
+      { error: "Bir hata oluştu. Lütfen daha sonra tekrar deneyin." },
       { status: 500 }
     );
   }
-} 
+}

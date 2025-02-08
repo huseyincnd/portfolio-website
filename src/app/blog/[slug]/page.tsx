@@ -16,8 +16,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Post Not Found" };
 
   return {
-    title: `${post.title} | Blog`,
+    title: `${post.title} | Web Tasarım Blog`,
     description: post.excerpt,
+    keywords: [...post.tags, 'web tasarım blog', 'web geliştirme', 'yazılım blog'],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author.name],
+      tags: post.tags,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    }
   };
 }
 
@@ -98,7 +121,40 @@ export default function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Content */}
-          <div className="prose prose-invert prose-blue max-w-none">
+            {/* Article Schema */}
+            <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": post.excerpt,
+              "image": post.image,
+              "datePublished": post.date,
+              "author": {
+                "@type": "Person",
+                "name": post.author.name,
+                "jobTitle": post.author.title
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Hüseyin Cüneydioğlu - Web Tasarım",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https://cuneydiogluhuseyin.online/logo.png"
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://cuneydiogluhuseyin.online/blog/${post.slug}`
+              },
+              "keywords": post.tags.join(", ")
+              })
+            }}
+            />
+
+            <div className="prose prose-invert prose-blue max-w-none">
             {/* Introduction */}
             <p className="lead">{post.content.introduction}</p>
 

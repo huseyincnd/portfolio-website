@@ -24,7 +24,7 @@ const technologies: Record<TechStack, Technology> = {
     color: "hover:text-blue-600"
   },
   "Tailwind CSS": {
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
     color: "hover:text-cyan-500"
   },
   "Responsive Design": {
