@@ -55,25 +55,40 @@ export const organizationSchema = {
 export const serviceSchema = {
 	"@context": "https://schema.org",
 	"@type": "Service",
+	"name": "Web Tasarım ve Geliştirme Hizmetleri",
 	"serviceType": "Web Design",
 	"provider": {
 		"@type": "Organization",
 		"name": "Hüseyin Cüneydioğlu Web Tasarım"
 	},
-	"review": {
-		"@type": "Review",
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5",
-			"worstRating": "1"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Ahmet Yılmaz"
-		},
-		"reviewBody": "Hüseyin Bey ile çalışmak çok keyifliydi. Kliniğimiz için hazırladığı web sitesi beklentilerimizin üzerinde oldu."
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"ratingCount": "50",
+		"bestRating": "5",
+		"worstRating": "1"
 	},
+	"review": [
+		{
+			"@type": "Review",
+			"itemReviewed": {
+				"@type": "Service",
+				"name": "Web Tasarım Hizmetleri"
+			},
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "5",
+				"bestRating": "5",
+				"worstRating": "1"
+			},
+			"author": {
+				"@type": "Person",
+				"name": "Ahmet Yılmaz"
+			},
+			"reviewBody": "Hüseyin Bey ile çalışmak çok keyifliydi. Kliniğimiz için hazırladığı web sitesi beklentilerimizin üzerinde oldu.",
+			"datePublished": "2024-02-08"
+		}
+	],
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
 		"name": "Web Tasarım Hizmetleri",
